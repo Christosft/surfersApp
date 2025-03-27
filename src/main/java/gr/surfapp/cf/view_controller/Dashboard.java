@@ -35,7 +35,7 @@ public class Dashboard extends JFrame {
 			public void windowOpened(WindowEvent e) {
 				String sql = "jdbc:mysql://localhost:3306/surf_Sessions_db?serverTimezone=UTC";
 				String username = "surfersSes";
-				String password = "Prelqweasd123!";
+				String password = "";
 				
 				try {
 					connection = DriverManager.getConnection(sql, username, password);
