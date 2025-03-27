@@ -16,8 +16,7 @@ public class Main {
 	private static final UpdateSessionSuccessPage updateSuccess = new UpdateSessionSuccessPage();
 	
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+		EventQueue.invokeLater(() -> {
 				try {
 					landingPage.setVisible(true);
 					landingPage.setLocationRelativeTo(null);
@@ -49,7 +48,6 @@ public class Main {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
 		});
 	}
 

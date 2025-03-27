@@ -30,21 +30,6 @@ public class Dashboard extends JFrame {
 
 	
 	public Dashboard() {
-		addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowOpened(WindowEvent e) {
-				String sql = "jdbc:mysql://localhost:3306/surf_Sessions_db?serverTimezone=UTC";
-				String username = "surfersSes";
-				String password = "";
-				
-				try {
-					connection = DriverManager.getConnection(sql, username, password);
-					System.out.println("Connection success");
-				}catch(SQLException e1) {
-					e1.printStackTrace();
-				}
-			}
-		});
 		
 		setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
