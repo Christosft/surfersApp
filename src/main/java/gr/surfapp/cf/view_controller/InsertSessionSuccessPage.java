@@ -25,10 +25,10 @@ public class InsertSessionSuccessPage extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JButton btnClose = new JButton("Κλείσμο");
+        JButton btnClose = new JButton("Κλείσιμο");
         btnClose.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Main.getInsertSuccess().setEnabled(true);
+                Main.getInsertSession().setEnabled(true);
                 Main.getInsertSuccess().setVisible(false);
             }
         });

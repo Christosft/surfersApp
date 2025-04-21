@@ -11,9 +11,10 @@ public class DBUtil {
     private static Connection connection;
 
     static {
-        ds.setUrl("jdbc:mysql://localhost:3306/surf_Sessions_db?serverTimezone=UTC");
+        ds.setUrl("jdbc:mysql://localhost:3306/surf_sessions_db?serverTimezone=UTC");
         ds.setUsername("surfersSes");
         ds.setPassword(System.getenv("PASSWD_SURFSES"));
+        //System.out.println("Password: " + System.getenv("PASSWD_SURFSES"));
 
         ds.setInitialSize(10);
         ds.setMinIdle(10);

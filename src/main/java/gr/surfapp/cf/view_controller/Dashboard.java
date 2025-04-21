@@ -15,18 +15,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Dialog.ModalExclusionType;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class Dashboard extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel SurfersLog;
-	private final JPanel QuotesAndSessions = new JPanel();
-	private static Connection connection;
+    private static Connection connection;
 
 	
 	public Dashboard() {
@@ -35,25 +29,26 @@ public class Dashboard extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Surfers Adventures");
 		setBounds(100, 100, 1359, 781);
-		SurfersLog = new JPanel();
-		SurfersLog.setBackground(new Color(0, 128, 255));
-		SurfersLog.setBorder(new EmptyBorder(5, 5, 5, 5));
+        JPanel surfersLog = new JPanel();
+		surfersLog.setBackground(new Color(0, 128, 255));
+		surfersLog.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(SurfersLog);
-		SurfersLog.setLayout(null);
-		QuotesAndSessions.setBounds(0, 0, 1345, 61);
-		SurfersLog.add(QuotesAndSessions);
-		QuotesAndSessions.setLayout(null);
+		setContentPane(surfersLog);
+		surfersLog.setLayout(null);
+        JPanel quotesAndSessions = new JPanel();
+        quotesAndSessions.setBounds(0, 0, 1345, 61);
+		surfersLog.add(quotesAndSessions);
+		quotesAndSessions.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Huppy Surfers Log Page");
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblNewLabel.setBounds(467, 10, 317, 26);
-		QuotesAndSessions.add(lblNewLabel);
+		quotesAndSessions.add(lblNewLabel);
 		
 		JPanel SessionPanel = new JPanel();
 		SessionPanel.setBackground(new Color(0, 128, 192));
 		SessionPanel.setBounds(0, 61, 164, 586);
-		SurfersLog.add(SessionPanel);
+		surfersLog.add(SessionPanel);
 		SessionPanel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("Christos Ftoulis");
@@ -110,42 +105,42 @@ public class Dashboard extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Surfing Quotes");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_4.setBounds(196, 71, 718, 25);
-		SurfersLog.add(lblNewLabel_4);
+		surfersLog.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("The best surfer out there is the one having the most fun.");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_5.setBounds(196, 109, 718, 25);
-		SurfersLog.add(lblNewLabel_5);
+		surfersLog.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_5_1 = new JLabel("Out of the water, I am nothing.");
 		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_5_1.setBounds(196, 133, 718, 25);
-		SurfersLog.add(lblNewLabel_5_1);
+		surfersLog.add(lblNewLabel_5_1);
 		
 		JLabel lblNewLabel_5_2 = new JLabel("Surfing is attitude dancing.");
 		lblNewLabel_5_2.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_5_2.setBounds(196, 157, 718, 25);
-		SurfersLog.add(lblNewLabel_5_2);
+		surfersLog.add(lblNewLabel_5_2);
 		
 		JLabel lblNewLabel_5_3 = new JLabel("Surfing to me is like playing music. You play different melodies \r\n");
 		lblNewLabel_5_3.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_5_3.setBounds(196, 181, 718, 25);
-		SurfersLog.add(lblNewLabel_5_3);
+		surfersLog.add(lblNewLabel_5_3);
 		
 		JLabel lblNewLabel_5_4 = new JLabel("with different boards.");
 		lblNewLabel_5_4.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_5_4.setBounds(196, 203, 718, 25);
-		SurfersLog.add(lblNewLabel_5_4);
+		surfersLog.add(lblNewLabel_5_4);
 		
 		JLabel lblNewLabel_5_2_1 = new JLabel("We're all equal before a wave.");
 		lblNewLabel_5_2_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_5_2_1.setBounds(196, 225, 718, 25);
-		SurfersLog.add(lblNewLabel_5_2_1);
+		surfersLog.add(lblNewLabel_5_2_1);
 		
 		JPanel footer = new JPanel();
 		footer.setLayout(null);
 		footer.setBounds(0, 676, 1345, 68);
-		SurfersLog.add(footer);
+		surfersLog.add(footer);
 		
 		JLabel lblNewLabel_6 = new JLabel("Surfers Guide");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -160,7 +155,7 @@ public class Dashboard extends JFrame {
 		JSeparator separator = new JSeparator();
 		separator.setBackground(new Color(64, 0, 64));
 		separator.setBounds(10, 657, 1312, 9);
-		SurfersLog.add(separator);
+		surfersLog.add(separator);
 		
 		JButton btnNewButton = new JButton("NEW SESSIONS");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -172,7 +167,7 @@ public class Dashboard extends JFrame {
 		btnNewButton.setBackground(new Color(240, 240, 240));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(209, 615, 164, 32);
-		SurfersLog.add(btnNewButton);
+		surfersLog.add(btnNewButton);
 		
 		JButton btnNewButtonViewSes = new JButton("VIEW SESSION");
 		btnNewButtonViewSes.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -183,7 +178,7 @@ public class Dashboard extends JFrame {
 			}
 		});
 		btnNewButtonViewSes.setBounds(561, 615, 154, 34);
-		SurfersLog.add(btnNewButtonViewSes);
+		surfersLog.add(btnNewButtonViewSes);
 		}
 
 	public static Connection getConnection() {

@@ -25,7 +25,7 @@ public class UpdateSessionSuccessPage extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JButton btnClose = new JButton("Κλείσμο");
+        JButton btnClose = new JButton("Κλείσιμο");
         btnClose.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Main.getUpdateSession().setEnabled(true);
@@ -38,7 +38,7 @@ public class UpdateSessionSuccessPage extends JFrame {
         btnClose.setBounds(345, 257, 184, 45);
         contentPane.add(btnClose);
 
-        JLabel lblInsert = new JLabel("Ενημέρωση Εκπαιδευτή");
+        JLabel lblInsert = new JLabel("Session is Updated");
         lblInsert.setFont(new Font("Tahoma", Font.BOLD, 20));
         lblInsert.setHorizontalAlignment(SwingConstants.CENTER);
         lblInsert.setBounds(27, 22, 504, 35);
@@ -50,13 +50,13 @@ public class UpdateSessionSuccessPage extends JFrame {
         contentPane.add(successPanel);
         successPanel.setLayout(null);
 
-        JLabel successText = new JLabel("Ο εκπαιδευτής ενημερώθηκε επιτυχώς");
+        JLabel successText = new JLabel("Session updated successfully");
         successText.setFont(new Font("Tahoma", Font.BOLD, 16));
         successText.setForeground(new Color(255, 255, 255));
         successText.setBounds(40, 24, 354, 36);
         successPanel.add(successText);
 
-        JLabel lblNewLabel = new JLabel("Κωδικός Εκπαιδευτή");
+        JLabel lblNewLabel = new JLabel("Session code");
         lblNewLabel.setForeground(new Color(255, 255, 255));
         lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);

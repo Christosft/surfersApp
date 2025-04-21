@@ -2,23 +2,25 @@ package gr.surfapp.cf.view_controller;
 
 
 import gr.surfapp.cf.Main;
+import gr.surfapp.cf.dao.ISessionDAO;
+import gr.surfapp.cf.dao.SessionDAOImpl;
+import gr.surfapp.cf.dao.exceptions.SessionDaoException;
+import gr.surfapp.cf.dto.SessionReadOnlyDTO;
+import gr.surfapp.cf.exceptions.SessionNotFoundException;
+import gr.surfapp.cf.service.ISessionService;
+import gr.surfapp.cf.service.SessionServiceImpl;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class ViewSession extends JFrame {
@@ -31,6 +33,9 @@ public class ViewSession extends JFrame {
 	private JLabel Date;
 	private JLabel Conditions;
 	private JLabel SurfResults;
+
+	private final ISessionDAO sessionDAO = new SessionDAOImpl();
+	private final ISessionService sessionService = new SessionServiceImpl(sessionDAO);
 	
 
 	
@@ -40,7 +45,7 @@ public class ViewSession extends JFrame {
 			@Override
 			public void windowActivated(WindowEvent e) {
 				
-				fetchSessionFromDatabase(Main.getViewSessionsPage().getCurrentUserId());
+				fetchSessionFromDatabase(Main.getViewSessionsPage().getSelectedId());
 			}
 			
 			@Override
@@ -120,10 +125,10 @@ public class ViewSession extends JFrame {
 		btnNewButton.setBounds(731, 343, 104, 24);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("Date");
-		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_2_1_1.setBounds(53, 199, 91, 24);
-		contentPane.add(lblNewLabel_2_1_1);
+//		JLabel lblNewLabel_2_1_1 = new JLabel("Date");
+//		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+//		lblNewLabel_2_1_1.setBounds(53, 199, 91, 24);
+//		contentPane.add(lblNewLabel_2_1_1);
 		
 		Surfspot = new JLabel("Surfspot");
 		Surfspot.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -135,10 +140,10 @@ public class ViewSession extends JFrame {
 		Surfboard.setBounds(265, 165, 610, 24);
 		contentPane.add(Surfboard);
 		
-		Date = new JLabel("Date");
-		Date.setFont(new Font("Tahoma", Font.BOLD, 12));
-		Date.setBounds(265, 199, 620, 24);
-		contentPane.add(Date);
+//		Date = new JLabel("Date");
+//		Date.setFont(new Font("Tahoma", Font.BOLD, 12));
+//		Date.setBounds(265, 199, 620, 24);
+//		contentPane.add(Date);
 		
 		Conditions = new JLabel("Conditions");
 		Conditions.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -161,28 +166,17 @@ public class ViewSession extends JFrame {
 		contentPane.add(SurfCode);
 	}
 		
-		private void fetchSessionFromDatabase(String id) {
-			String sql = "SELECT * FROM sessions WHERE uuid = ?";
-			
-			Connection conn = Dashboard.getConnection();
-			
-			try (PreparedStatement ps = conn.prepareStatement(sql)) {
-				
-				ps.setString(1, id);
-				ResultSet rs = ps.executeQuery();
-				
-				if (rs.next()) {
-					SurfCode.setText(rs.getString("uuid")); //.substring(0, 8));
-					Surfspot.setText(rs.getString("surfspots"));
-					Surfboard.setText(rs.getString("surfboards"));
-					Date.setText(rs.getString("created_at"));
-					Conditions.setText(rs.getString("conditions"));
-					SurfResults.setText(rs.getString("opinions"));
-					
-			}
-				}catch (SQLException e) {
-				e.printStackTrace();
-				JOptionPane.showMessageDialog(null,  "Select error in fetch session", "Error", JOptionPane.ERROR_MESSAGE);	
+		private void fetchSessionFromDatabase(Integer id) {
+			try {
+				SessionReadOnlyDTO dto = sessionService.getSessionById(id);
+				SurfCode.setText(dto.getUuid());
+				Surfspot.setText(dto.getSurfspots());
+				Surfboard.setText(dto.getSurfboards());
+				Conditions.setText(dto.getConditions());
+				SurfResults.setText(dto.getOpinions());
+			} catch (SessionDaoException | SessionNotFoundException e) {
+				Main.getViewSessionsPage().setEnabled(true);
+				Main.getViewSession().setVisible(false);
 			}
 		}
 	}
