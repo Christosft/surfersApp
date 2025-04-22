@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
+import java.time.format.DateTimeFormatter;
 
 public class ViewSession extends JFrame {
 
@@ -125,10 +126,10 @@ public class ViewSession extends JFrame {
 		btnNewButton.setBounds(731, 343, 104, 24);
 		contentPane.add(btnNewButton);
 		
-//		JLabel lblNewLabel_2_1_1 = new JLabel("Date");
-//		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-//		lblNewLabel_2_1_1.setBounds(53, 199, 91, 24);
-//		contentPane.add(lblNewLabel_2_1_1);
+		JLabel lblNewLabel_2_1_1 = new JLabel("Date");
+		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_2_1_1.setBounds(53, 199, 91, 24);
+		contentPane.add(lblNewLabel_2_1_1);
 		
 		Surfspot = new JLabel("Surfspot");
 		Surfspot.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -140,10 +141,10 @@ public class ViewSession extends JFrame {
 		Surfboard.setBounds(265, 165, 610, 24);
 		contentPane.add(Surfboard);
 		
-//		Date = new JLabel("Date");
-//		Date.setFont(new Font("Tahoma", Font.BOLD, 12));
-//		Date.setBounds(265, 199, 620, 24);
-//		contentPane.add(Date);
+		Date = new JLabel("Date");
+		Date.setFont(new Font("Tahoma", Font.BOLD, 12));
+		Date.setBounds(265, 199, 620, 24);
+		contentPane.add(Date);
 		
 		Conditions = new JLabel("Conditions");
 		Conditions.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -172,6 +173,12 @@ public class ViewSession extends JFrame {
 				SurfCode.setText(dto.getUuid());
 				Surfspot.setText(dto.getSurfspots());
 				Surfboard.setText(dto.getSurfboards());
+				if (dto.getCreatedAt() != null) {
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+					Date.setText(dto.getCreatedAt().format(formatter));
+				} else {
+					Date.setText("N/A");
+				}
 				Conditions.setText(dto.getConditions());
 				SurfResults.setText(dto.getOpinions());
 			} catch (SessionDaoException | SessionNotFoundException e) {

@@ -1,20 +1,23 @@
 package gr.surfapp.cf.dto;
 
-import java.sql.Timestamp;
+
+import java.time.LocalDateTime;
 
 public class SessionReadOnlyDTO  extends BaseSessionDTO {
 
     private String uuid;
     private Integer id;
+    private LocalDateTime createdAt;
 
     public SessionReadOnlyDTO() {
 
     }
 
-    public SessionReadOnlyDTO(Integer id, String surfspots, String surfboards, String conditions, String opinions, String uuid) {
+    public SessionReadOnlyDTO(Integer id, String surfspots, String surfboards, String conditions, String opinions, String uuid, LocalDateTime createdAt) {
         super(surfspots, surfboards, conditions, opinions);
         this.id = id;
         this.uuid = uuid;
+        this.createdAt = createdAt;
     }
 
     public Integer getId() {
@@ -32,6 +35,11 @@ public class SessionReadOnlyDTO  extends BaseSessionDTO {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
 
     @Override
     public String toString() {

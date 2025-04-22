@@ -25,6 +25,6 @@ public class Mapper {
 
     public static Optional<SessionReadOnlyDTO> mapSessionToReadOnlyDTO(Session session) {
         if (session == null) return Optional.empty();
-        return Optional.of(new SessionReadOnlyDTO(session.getId(), session.getSurfspots(), session.getSurfboards(), session.getConditions(), session.getOpinions(), session.getUuid()));
+        return Optional.of(new SessionReadOnlyDTO(session.getId(), session.getSurfspots(), session.getSurfboards(), session.getConditions(), session.getOpinions(), session.getUuid(), session.getCreatedAt()));
     }
 }
