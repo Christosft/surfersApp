@@ -4,17 +4,44 @@ import gr.surfapp.cf.view_controller.*;
 
 import java.awt.EventQueue;
 
+/**
+ * The {@code Main} class serves as the entry point for the application and manages
+ * the visibility and positioning of the different GUI pages in the system.
+ * <p>
+ * All UI components are statically instantiated and can be accessed via getter methods.
+ * The main method initializes the pages on the Event Dispatch Thread to ensure thread safety.
+ * </p>
+ *
+ * @author Christos Ftoulis
+ */
+
 public class Main {
+	/** Here are the screens of the pages i create */
 	private static final LandingPage landingPage = new LandingPage();
+
 	private static final LoginPage loginPage = new LoginPage();
+
 	private static final Dashboard dashboard = new Dashboard();
+
 	private static final InsertSession insertSession = new InsertSession();
+
 	private static final ViewSessionsPage viewSessionsPage = new ViewSessionsPage();
+
 	private static final UpdateSession updateSession = new UpdateSession();
+
 	private static final ViewSession viewSession = new ViewSession();
+
 	private static final InsertSessionSuccessPage insertSuccess = new InsertSessionSuccessPage();
+
 	private static final UpdateSessionSuccessPage updateSuccess = new UpdateSessionSuccessPage();
-	
+
+	/**
+	 * The main entry point of the application. Initializes all UI components
+	 * and sets their initial visibility and location.
+	 *
+	 * @param args command-line arguments (not used)
+	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(() -> {
 				try {
@@ -50,6 +77,11 @@ public class Main {
 				}
 		});
 	}
+
+	/**
+	 * Getters of the pages
+	 * @return the pages instance
+	 */
 
 	public static LandingPage getLandingPage() {
 		return landingPage;

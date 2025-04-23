@@ -8,6 +8,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * {@code UpdateSessionSuccessPage} is a confirmation window that appears when a session update
+ * is successfully completed. It displays a message confirming the success along with the session's unique code.
+ * <p>
+ * The window provides a close button that hides the success window and re-enables the previous update and view windows.
+ * </p>
+ *
+ *  @author Christos Ftoulis
+ */
+
 public class UpdateSessionSuccessPage extends JFrame {
 
     private static final long serialVersionUID = 1L;

@@ -28,6 +28,22 @@ import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.util.Map;
 
+/**
+ * The {@code UpdateSession} class provides a GUI for updating a surfing session's details.
+ * <p>
+ * This window allows users to:
+ * <ul>
+ *   <li>View and edit the details of a selected session.</li>
+ *   <li>Validate input before updating.</li>
+ *   <li>Submit updates to the session service.</li>
+ *   <li>Navigate back to the session list or close the window.</li>
+ * </ul>
+ * </p>
+ * This class interacts with the backend service via {@link ISessionService}.
+ *
+ *  @author Christos Ftoulis
+ */
+
 public class UpdateSession extends JFrame {
 
 	private static final long serialVersionUID = 1L;

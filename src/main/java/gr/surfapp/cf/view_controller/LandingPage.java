@@ -14,6 +14,16 @@ import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The {@code LandingPage} class represents the main welcome screen
+ * of the "Surfers Adventures" application.
+ * <p>
+ * This class sets up the GUI layout, including welcome text,
+ * footer options, and a connect button to proceed to the login page.
+ * </p>
+ *
+ * @author Christos Ftoulis
+ */
 public class LandingPage extends JFrame {
 
 	private static final long serialVersionUID = 1L;

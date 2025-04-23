@@ -30,7 +30,17 @@ import java.io.Serial;
 import java.util.Map;
 
 
-
+/**
+ * The {@code InsertSession} class represents a form where users can input session details
+ * including surf spot, surfboard, surf conditions, and opinions. After entering the data,
+ * users can submit the session details, which will be validated and inserted into the system.
+ * The page also provides options to exit or reset the form.
+ *
+ * This form interacts with {@code ISessionService} for business logic and validation,
+ * as well as with {@code ISessionDAO} to perform database operations.
+ *
+ * @author Christos Ftoulis
+ */
 public class InsertSession extends JFrame {
 
 	@Serial

@@ -17,6 +17,13 @@ import java.awt.event.MouseEvent;
 import java.awt.Dialog.ModalExclusionType;
 import java.sql.Connection;
 
+/**
+ * The Dashboard class represents the main user interface window of the Surfers Adventures application.
+ * It provides navigation for creating and viewing surfing sessions and displays motivational surfing quotes.
+ * The class extends {@link javax.swing.JFrame} and is intended to be the entry point for the application.
+ *
+ *  @author Christos Ftoulis
+ */
 public class Dashboard extends JFrame {
 
 	private static final long serialVersionUID = 1L;

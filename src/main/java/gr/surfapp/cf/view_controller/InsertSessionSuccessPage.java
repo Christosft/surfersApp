@@ -8,6 +8,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The {@code InsertSessionSuccessPage} class represents a confirmation screen
+ * that appears after a session has been successfully inserted into the system.
+ * <p>
+ * It displays a success message along with the generated session UUID,
+ * and provides a close button to return to the previous screen.
+ * </p>
+ *
+ * This page is part of the "Surfers Adventures" application.
+ *
+ * @author Christos Ftoulis
+ */
 public class InsertSessionSuccessPage extends JFrame {
 
     private static final long serialVersionUID = 1L;

@@ -18,6 +18,15 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
 
+/**
+ * The {@code LoginPage} class represents a simple login window for the Surfers Adventures application.
+ * <p>
+ * It provides fields for username and password input and validates them against hardcoded credentials.
+ * If authentication is successful, it redirects the user to the main dashboard.
+ * </p>
+ *
+ *  @author Christos Ftoulis
+ */
 public class LoginPage extends JFrame {
 
 	private static final long serialVersionUID = 1L;

@@ -24,6 +24,18 @@ import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * The {@code ViewSession} class represents a GUI window for displaying detailed information
+ * about a single surfing session. This view is read-only and fetches session details from the
+ * database when the window is activated.
+ * <p>
+ * It uses the {@link ISessionService} to retrieve the session data, and displays information such
+ * as surfspot, surfboard, session date, conditions, results, and a unique surf code.
+ * </p>
+ *
+ *  @author Christos Ftoulis
+ */
+
 public class ViewSession extends JFrame {
 
 	private static final long serialVersionUID = 1L;

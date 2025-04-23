@@ -34,6 +34,18 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
 
+/**
+ * The {@code ViewSessionsPage} class represents the GUI window for viewing,
+ * searching, updating, and deleting surfing sessions.
+ * <p>
+ * It connects to the service layer via {@code ISessionService} and displays
+ * session data in a table format. Users can search sessions by surfspot, select
+ * sessions to view/update/delete, and navigate back to the dashboard.
+ * </p>
+ *
+ *  @author Christos Ftoulis
+ */
+
 public class ViewSessionsPage extends JFrame {
 
 	private static final long serialVersionUID = 1L;
