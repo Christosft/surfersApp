@@ -1,5 +1,10 @@
 package gr.surfapp.cf.dto;
 
+/**
+ * Data Transfer Object (DTO) for updating a session.
+ * Extends {@link BaseSessionDTO} and adds the session's ID and UUID for update operations.
+ */
+
 public class SessionUpdateDTO extends BaseSessionDTO {
     private Integer  id;
     private String uuid;

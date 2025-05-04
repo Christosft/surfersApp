@@ -3,6 +3,11 @@ package gr.surfapp.cf.dto;
 
 import java.time.LocalDateTime;
 
+/**
+ * Data Transfer Object (DTO) for a read-only session.
+ * Extends {@link BaseSessionDTO} and adds session-specific fields like UUID and creation timestamp.
+ */
+
 public class SessionReadOnlyDTO  extends BaseSessionDTO {
 
     private String uuid;

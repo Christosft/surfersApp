@@ -2,6 +2,10 @@ package gr.surfapp.cf.model;
 
 import java.time.LocalDateTime;
 
+/**
+ * Represents a surf session with associated details such as surfspot, board used, conditions, and user opinions.
+ */
+
 public class Session {
 
     private Integer id;

@@ -13,6 +13,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of the ISessionService interface.
+ * Handles business logic related to Session entities,
+ * including CRUD operations and mapping between DTOs and domain models.
+ */
+
 public class SessionServiceImpl implements ISessionService {
 
     private final ISessionDAO sessionDAO;

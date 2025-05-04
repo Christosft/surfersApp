@@ -8,6 +8,11 @@ import gr.surfapp.cf.model.Session;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * Utility class for mapping between DTOs and the Session model.
+ * Provides static methods for converting DTOs to model entities and vice versa.
+ */
+
 public class Mapper {
 
     private Mapper() {

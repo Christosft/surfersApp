@@ -16,7 +16,7 @@ import java.awt.EventQueue;
  */
 
 public class Main {
-	/** Here are the screens of the pages i create */
+	/** Here are the screens of the created pages */
 	private static final LandingPage landingPage = new LandingPage();
 
 	private static final LoginPage loginPage = new LoginPage();

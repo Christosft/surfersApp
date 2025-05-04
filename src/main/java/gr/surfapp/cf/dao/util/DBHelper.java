@@ -9,6 +9,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility class for database operations. Specifically, this class provides functionality to erase data from all tables
+ * in the database except for the 'surfspots' table. It also handles disabling and enabling foreign key checks.
+ *
+ * This class cannot be instantiated as it contains only static methods.
+ */
+
 
 
 public class DBHelper {

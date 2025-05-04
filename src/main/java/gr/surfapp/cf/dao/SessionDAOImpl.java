@@ -9,7 +9,11 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+
+/**
+ * The SessionDAOImpl class implements the ISessionDAO interface, providing methods for
+ * interacting with the database to manage session data (insert, update, delete, get).
+ */
 
 
 public class SessionDAOImpl implements ISessionDAO {

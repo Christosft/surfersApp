@@ -1,6 +1,10 @@
 package gr.surfapp.cf.dto;
 
-
+/**
+ * Abstract class representing a base Data Transfer Object (DTO) for session-related data.
+ * This class holds the common properties and methods for session DTOs such as surf spots,
+ * surfboards, conditions, and opinions.
+ */
 
 public abstract class BaseSessionDTO {
 

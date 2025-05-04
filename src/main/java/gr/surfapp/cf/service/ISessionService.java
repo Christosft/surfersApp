@@ -8,6 +8,10 @@ import gr.surfapp.cf.exceptions.SessionNotFoundException;
 
 import java.util.List;
 
+/**
+ * Interface defining service-level operations for managing surf sessions.
+ */
+
 public interface ISessionService {
 
     SessionReadOnlyDTO insertSession(SessionInsertDTO dto) throws SessionDaoException;
